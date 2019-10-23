@@ -48,16 +48,25 @@
 
 					<div class="collapse navbar-collapse" id="ftco-nav">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?= $this->session->userdata('username'); ?></a>
-								<div class="dropdown-menu" aria-labelledby="dropdown04">
-									<a class="dropdown-item" href="<?= base_url() ?>index.php/login_pelanggan/logout">Logout</a>
-								</div>
-							</li>
+							<?php if ($this->session->userdata('login') == TRUE) : ?>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <span style="text-transform:uppercase"><?= $this->session->userdata('username'); ?></span></a>
+									<div class="dropdown-menu" aria-labelledby="dropdown04">
+										<a class="dropdown-item" href="<?= base_url() ?>index.php/login_pelanggan/logout">Logout</a>
+									</div>
+								</li>
 
+
+							<?php else : ?>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+									<div class="dropdown-menu" aria-labelledby="dropdown04">
+										<a class="dropdown-item" href="<?= base_url() ?>index.php/login_pelanggan/index">Login</a>
+									</div>
+								</li>
+							<?php endif; ?>
 							<li class="nav-item"><a href="#" class="nav-link">Check Out</a></li>
 							<li class="nav-item cta cta-colored"><a class="nav-link"><span class="icon-shopping_cart"></span>[<span id="cart"></span>]</a></li>
-
 						</ul>
 					</div>
 			</div>
