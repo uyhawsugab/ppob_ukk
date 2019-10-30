@@ -15,7 +15,7 @@ class login_pelanggan extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('v_login_pelanggan');
+		$this->load->view('user/v_login_pelanggan');
 		
 	}
 

@@ -7,8 +7,8 @@ class dashboard extends CI_Controller {
 
 	public function index()
 	{
-		 $data['konten'] = 'v_dashboard';
-		 $this->load->view('template', $data);
+		 $data['konten'] = 'user/v_dashboard';
+		 $this->load->view('user/template', $data);
 	}
 
 }
